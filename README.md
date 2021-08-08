@@ -1,4 +1,4 @@
 # mathema
-Math notes
-Test I change
-bobo
+Test
+$x=y^2$
+$$x^2=x$$
