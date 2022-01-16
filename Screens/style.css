@@ -7,7 +7,7 @@
 html, body
 {
     max-width: 95%;
-    overflow-y:scroll;
+    overflow-y: scroll;
     overflow-x: hidden;
     
 }
@@ -19,7 +19,7 @@ body
     font-family: 'Work Sans';
     color:rgb(224, 224, 213);
     background-color: black;
-    background-image: linear-gradient(black,rgb(15, 11, 7), black);
+    background-image: linear-gradient(rgb(29, 21, 34),rgb(8, 23, 26), rgb(29, 19, 18),  rgb(0, 0, 0));
     width: 80%;
     
     max-width:800px
@@ -45,6 +45,21 @@ h1, h2
     margin-bottom: 0.1em;
 }
 
+comment
+{
+    color:rgb(121, 122, 121)
+}
+
+h1
+{
+    font-size: 3em;
+}
+
+.content
+{
+    margin-top: 2em;
+}
+
 
 h3
 {
@@ -57,24 +72,38 @@ p
     font-size: 1.2em;
 }
 
+header
+{
+    position:relative;
+    width: 100%;
+    height: 6em;
+    overflow: hidden;
+}
+
+#vidBGTop
+{
+    z-index: -1;
+    opacity: 40%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    
+}
+
 #vidSection
 {
     width: 100%;
 }
 
-#vidBGTop
-{
-    object-fit: fill;
-    z-index: -1;
-    opacity: 40%;
-}
-
 .overlayText
 {
     position: absolute;
-    top: 10%;
+    align-self: center center;
+    top: 30%;
     z-index:1;
-    left: 15%;
+    left: 7%;
     /*align-self: right;*/
 }
 
