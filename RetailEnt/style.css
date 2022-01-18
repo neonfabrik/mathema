@@ -26,17 +26,19 @@
     --pink: #FDCDCA;
     --orange: #F9996A;
     --yellow: #FEE881;
+    --sand: rgba(238, 232, 217,.6);
+    --sandText: rgba(238, 232, 217,.9);
 }
 
 html, body
 {
     /*overflow-y: scroll;*/
     overflow-x: hidden;
-    background-color: rgb(238, 232, 217);
+    background-color: var(--sand);
+    background-position: center;
     background-image: 
-    -webkit-repeating-linear-gradient(rgba(247, 148, 148, 0.9),rgba(89, 170, 190, 0.9),rgba(29, 55, 61, 0.9),rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95), rgba(9, 19, 63, 0.95)), 
+    linear-gradient(rgba(247, 148, 148, 0.9),rgba(89, 170, 190, 0.9),rgba(29, 55, 61, 0.9),rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95), rgba(9, 19, 63, 0.95)), 
     url("logo/tile.png");
-    /*background-attachment: fixed;*/
 }
 
 body
@@ -44,18 +46,8 @@ body
     font-family: 'Helv Roman';
     margin: 1em auto;
     
-
     /*background-blend-mode:difference;*/
     max-width: min(95%, 800px);
-}
-
-
-
-#topbox
-{
-    height: var(--logo-height);
-    width: calc(var(--logo-height)*1.5);
-    margin-left: auto;
 }
 
 h1, h2, h3
@@ -86,9 +78,9 @@ p
 section
 {
     font-size: 1.2rem;
-    background-color:rgb(238, 232, 217);
+    background-color:var(--sand);
     padding: 0.8em 1em 0.8em;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.5em;
     overflow-y: hidden;
     /*overscroll-behavior: contain;*/
 }
@@ -100,29 +92,91 @@ li
 
 .secdark
 {
-    color: rgb(238, 232, 217);
+    color: var(--sandText);
     background-color:rgba(22, 22, 22, 0.5);
 }
+
+
+
+#topDiv
+{
+    gap: 0.4rem;
+    display: flex;
+}
+
+#topLeftDiv
+{
+    flex: auto;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#topLeftDiv > *
+{
+    flex: 1;
+    background-color: var(--sand);
+}
+
+#topLeftDiv :last-child
+{
+    flex: 1;
+    height:20px;
+    background-color: var(--sand);
+}
+
+
+#logoDiv
+{
+    background-color: var(--sand);
+    flex: 0;
+
+    padding: 0.5em 1.6rem 0.4rem 1.5rem;
+    margin:0;
+}
+
+/*
+.topbox
+{
+    height: var(--logo-height);
+    width: calc(var(--logo-height)*1.5);
+    margin-left: auto;
+    display:flex;
+}
+*/
+
+
+
+
 
 .logo
 {
     /*-webkit-filter: invert(100%);*/
     height:var(--logo-height);
-    float:right;
     padding: 0.1em
 }
+
 .simplegrid
 {
-    font-size: min(2.3rm, 3.5vw);
+
     font-family: 'Helv Heavy';
     display:grid;
     grid-auto-flow: column;
     /*overflow-x: scroll;*/
     gap: 0.6rem;
     /*background-color: white;*/
-    padding: 0.5em;
+
     height: 6rem;
 }
+
+.simplegrid + .simplegrid
+{
+    padding: 0.5em;
+}
+
+
+
 .parralaxImage1
 {
     background-image: url("stills/midori/adidas_03-1.jpg");
@@ -133,7 +187,9 @@ li
     background-size:contain;
 }
 
-.parralaxSec
+.simpleSec
 {
+    background-color: transparent;
+    /*background-image: linear-gradient(to right, transparent 30%, rgba(238, 232, 217, 0.6));*/
     padding:0;
 }
