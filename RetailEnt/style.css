@@ -1,0 +1,139 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap');
+*/
+
+@font-face
+{
+    font-family:'Helv Medium';
+    src: url('font/HelveticaNeue-Medium.otf');
+}
+
+@font-face
+{
+    font-family:'Helv Heavy';
+    src: url('font/HelveticaNeue-Heavy.otf');
+}
+
+@font-face
+{
+    font-family:'Helv Roman';
+    src: url('font/HelveticaNeue-Roman.otf');
+}
+
+:root
+{
+    --logo-height: 70px;
+    --blue: #B2DBE7;
+    --pink: #FDCDCA;
+    --orange: #F9996A;
+    --yellow: #FEE881;
+}
+
+html, body
+{
+    /*overflow-y: scroll;*/
+    overflow-x: hidden;
+    background-color: rgb(238, 232, 217);
+    background-image: 
+    -webkit-repeating-linear-gradient(rgba(247, 148, 148, 0.9),rgba(89, 170, 190, 0.9),rgba(29, 55, 61, 0.9),rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95), rgba(9, 19, 63, 0.95)), 
+    url("logo/tile.png");
+    /*background-attachment: fixed;*/
+}
+
+body
+{
+    font-family: 'Helv Roman';
+    margin: 1em auto;
+    
+
+    /*background-blend-mode:difference;*/
+    max-width: min(95%, 800px);
+}
+
+
+
+#topbox
+{
+    height: var(--logo-height);
+    width: calc(var(--logo-height)*1.5);
+    margin-left: auto;
+}
+
+h1, h2, h3
+{
+    font-family: 'Helv Heavy';
+}
+
+h1
+{
+    font-size: 2.2rem;
+}
+
+h2
+{
+    font-size: 1.5rem;
+}
+
+h3
+{
+    font-size: 1.2rem;
+}
+
+p
+{
+    margin-bottom:4rem;
+}
+
+section
+{
+    font-size: 1.2rem;
+    background-color:rgb(238, 232, 217);
+    padding: 0.8em 1em 0.8em;
+    margin-bottom: 0.3em;
+    overflow-y: hidden;
+    /*overscroll-behavior: contain;*/
+}
+
+li
+{
+    margin-bottom: 1em;
+}
+
+.secdark
+{
+    color: rgb(238, 232, 217);
+    background-color:rgba(22, 22, 22, 0.5);
+}
+
+.logo
+{
+    /*-webkit-filter: invert(100%);*/
+    height:var(--logo-height);
+    float:right;
+    padding: 0.1em
+}
+.simplegrid
+{
+    font-size: min(2.3rm, 3.5vw);
+    font-family: 'Helv Heavy';
+    display:grid;
+    grid-auto-flow: column;
+    /*overflow-x: scroll;*/
+    gap: 0.6rem;
+    /*background-color: white;*/
+    padding: 0.5em;
+    height: 6rem;
+}
+.parralaxImage1
+{
+    background-image: url("stills/midori/adidas_03-1.jpg");
+    min-height: 10em;
+    /*background-attachment:20px;*/
+    /*background-position: left;*/
+    background-repeat: repeat;
+    background-size:contain;
+}
+
+.parralaxSec
+{
+    padding:0;
+}
