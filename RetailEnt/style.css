@@ -50,7 +50,7 @@ body
     max-width: min(95%, 800px);
 }
 
-h1, h2, h3
+h1, h2, h3, strong
 {
     font-family: 'Helv Heavy';
 }
@@ -97,6 +97,10 @@ li
 }
 
 
+strong
+{
+    font-size: 1.4em;
+}
 
 #topDiv
 {
