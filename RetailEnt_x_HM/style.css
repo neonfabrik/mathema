@@ -253,3 +253,24 @@ a
     /*background-image: linear-gradient(to right, transparent 30%, rgba(238, 232, 217, 0.6));*/
     padding:0;
 }
+
+.boxContainer
+{
+    flex-wrap: wrap;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boxContainer div
+{
+    background-color: rgb(255, 255, 255, .1);
+    background-color: rgba(0, 0, 0, 1);
+    padding: 0.2rem 0.7rem;
+    padding-top: 0.4rem;
+    margin: 0.2rem;
+
+    font-family: 'Helv Heavy';
+    font-size: 1em;
+}
