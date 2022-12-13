@@ -12,14 +12,14 @@
         }
         .flex-container {
             display: flex;
-            flex-basis: auto;
-            height: 100vh;
+            flex-basis: max-content;
+            height: 100vw;
             margin: 0;
             padding: 0;
         }
 
         .flex-child {
-            flex: 1;
+            flex: 1 1;
             background-color: blue;
         }
         .flex-child:last-child{
@@ -46,9 +46,10 @@
     <script type="text/javascript" src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
     <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
     <script>
+
       let scene, camera, renderer;
       let controls;
-      
+
 
       const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
@@ -133,12 +134,31 @@
 
       // render loop
       function render() {
+        resizeCanvasToDisplaySize();
         controls.update();
         requestAnimationFrame(render);
         renderer.render(scene, camera);
       }
 
       render();
+
+
+    function resizeCanvasToDisplaySize() {
+        const canvas = renderer.domElement;
+        // look up the size the canvas is being displayed
+        const width = canvas.clientWidth;
+        const height = canvas.clientHeight;
+
+        // adjust displayBuffer size to match
+        if (canvas.width !== width || canvas.height !== height) {
+            // you must pass false here or three.js sadly fights the browser
+            renderer.setSize(width, height, false);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+
+            // update any render target sizes here
+        }
+    }
     </script>
   </body>
 </html>
