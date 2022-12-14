@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <title>My Scene</title>
+</head>
+<body>
+    <div class="frame">
+        <div id="result">
+          <canvas></canvas>
+        </div>
+        <div id="editor">
+            <h2>Partille 2023</h2>
+
+            <hr>
+            
+            <p>
+            <video id="vidElement" controls repeat></video>
+            <input id="fileSelector" type="file" accept="video/*"/>
+            <div id="message"></div>
+            </p>
+            <hr>
+            <br><br>
+            CONTROLS:<br><br>
+            Orbit <br> left mouse / touch: one-finger move <br><br>
+            Zoom <br> middle mouse, or mousewheel / touch: two-finger spread or squish<br><br>
+            Pan <br> right mouse, or left mouse + ctrl/meta/shiftKey / touch: two-finger move
+
+        </div>
+      </div>
+
+    <script src="https://threejs.org/build/three.min.js"></script>
+    <!-- <script src="dat.gui.min.js"></script> -->
+    <!-- include OrbitControls so that we can pan around the scene with the mouse -->
+    <script type="text/javascript" src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="modelViewer.js"></script>
+</body>
+</html>
