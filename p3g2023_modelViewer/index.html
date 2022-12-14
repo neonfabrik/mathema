@@ -1,164 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="styles.css"/>
     <title>My Scene</title>
-    <style>
-        body {
-            padding: 0;
-            margin: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .flex-container {
-            display: flex;
-            flex-basis: max-content;
-            height: 100vw;
-            margin: 0;
-            padding: 0;
-        }
+</head>
+<body>
+    <div class="frame">
+        <div id="result">
+          <canvas></canvas>
+        </div>
+        <div id="editor">
+            <h2>Partille 2023</h2>
 
-        .flex-child {
-            flex: 1 1;
-            background-color: blue;
-        }
-        .flex-child:last-child{
-            flex: 0 0 250px;
-            background-color: aquamarine;
-        }
+            <hr>
+            
+            <p>
+            <video id="vidElement" controls repeat></video>
+            <input id="fileSelector" type="file" accept="video/*"/>
+            <div id="message"></div>
+            </p>
+            <hr>
+            <br><br>
 
-        .vid {
-            width: 100%;
-        }
+            <section>
+            CONTROLS:<br><br>
 
-    </style>
-  </head>
-  <body>
+            <!--<img src="http://www.digitiseddiseases.org/general_images/controls2.png">-->
 
-    <div class="flex-container">
-        <div class="flex-child left" id="divLeft"></div>
-        <div class="flex-child right" id="divRight"></div>
-    </div>
+            Orbit <br> left mouse / touch: one-finger move <br><br>
+            Zoom <br> middle mouse, or mousewheel / touch: two-finger spread or squish<br><br>
+            Pan <br> right mouse, or left mouse + ctrl/meta/shiftKey / touch: two-finger move
+            </section>
+        </div>
+      </div>
 
-    <!-- Add the video element here -->
     <script src="https://threejs.org/build/three.min.js"></script>
+    <!-- <script src="dat.gui.min.js"></script> -->
     <!-- include OrbitControls so that we can pan around the scene with the mouse -->
     <script type="text/javascript" src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
     <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
-    <script>
-
-      let scene, camera, renderer;
-      let controls;
-
-
-      const params = new Proxy(new URLSearchParams(window.location.search), {
-        get: (searchParams, prop) => searchParams.get(prop),
-        });
-        let vidSrc = params.v; 
-        console.log(vidSrc);
-
-
-      const vidElement = document.createElement('video');
-      vidElement.src = vidSrc;
-      vidElement.controls = true;
-      vidElement.className = "vid";
-
-      const divLeft = document.getElementById("divLeft");
-      const divRight = document.getElementById("divRight");
-
-      // scene setup
-      scene = new THREE.Scene();
-      //scene.size = { width: divLeft.offsetWidth, height: divLeft.offsetHeight };
-      camera = new THREE.PerspectiveCamera(75, divLeft.offsetWidth/divLeft.offsetHeight, 0.1, 1000);
-      renderer = new THREE.WebGLRenderer();
-      renderer.setSize(divLeft.offsetWidth,divLeft.offsetHeight);
-    
-      divLeft.appendChild(renderer.domElement);
-      divRight.appendChild(vidElement);
-
-      divLeft.addEventListener('resize', function() {
-        console.log("size change");
-    // When the div is resized, update the scene's size to match the new div size
-    renderer.setSize(divLeft.offsetWidth, divLeft.offsetHeight);
-    });
-      
-      //document.body.appendChild(renderer.domElement);
-      //document.body.appendChild(vidElement);
-
-      
-      let videoTexture = new THREE.VideoTexture(vidElement);
-      videoTexture.minFilter = THREE.LinearFilter;
-      videoTexture.magFilter = THREE.LinearFilter;
-      videoTexture.format = THREE.RGBAFormat;
-      videoTexture.flipY = false;
-
-      const loader = new THREE.GLTFLoader();
-
-      loader.load(
-        'model_05.glb',
-        function (gltf) {
-            scene.add( gltf.scene );
-            gltf.scene; // THREE.Group
-            gltf.scenes; // Array<THREE.Group>
-            gltf.asset; // Object
-            scene.getObjectByName("Scene").getObjectByName("LED_R").material.emissiveMap = videoTexture;
-        },
-	// called while loading is progressing
-        function ( xhr ) {
-
-            console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-
-        },
-        // called when loading has errors
-        function ( error ) {
-
-            console.log( 'An error happened' );
-
-        }
-    );
-
-      const directionalLight = new THREE.DirectionalLight( 0xffffff, 5.5 );
-      scene.add( directionalLight );
-
-      const light = new THREE.AmbientLight( 0x404040 ); // soft white light
-      scene.add( light );
-
-      // camera setup
-      camera.position.z = 30;
-
-      // orbit controls setup
-      controls = new THREE.OrbitControls(camera, renderer.domElement);
-      controls.enableDamping = true;
-      controls.dampingFactor = 0.05;
-      controls.enableZoom = true;
-
-      // render loop
-      function render() {
-        resizeCanvasToDisplaySize();
-        controls.update();
-        requestAnimationFrame(render);
-        renderer.render(scene, camera);
-      }
-
-      render();
-
-
-    function resizeCanvasToDisplaySize() {
-        const canvas = renderer.domElement;
-        // look up the size the canvas is being displayed
-        const width = canvas.clientWidth;
-        const height = canvas.clientHeight;
-
-        // adjust displayBuffer size to match
-        if (canvas.width !== width || canvas.height !== height) {
-            // you must pass false here or three.js sadly fights the browser
-            renderer.setSize(width, height, false);
-            camera.aspect = width / height;
-            camera.updateProjectionMatrix();
-
-            // update any render target sizes here
-        }
-    }
-    </script>
-  </body>
+    <script src="modelViewer.js"></script>
+</body>
 </html>
