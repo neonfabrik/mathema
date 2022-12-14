@@ -28,6 +28,18 @@ html {
     color: white;
     height: 100%;
   }
+
+  #editor >*
+  {
+    width: 100%;
+  }
+
+
+  #editor section {
+    padding: 1em;
+    background-color: #222;
+  }
+
   #vidElement {
     width: 100%;
   }
