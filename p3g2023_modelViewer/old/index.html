@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="styles.css"/>
-    <title>P3 Guld 2023 Backdrop Viewer</title>
-
+    <title>My Scene</title>
 </head>
-
 <body>
     <div class="frame">
         <div id="result">
@@ -19,7 +16,7 @@
             <hr>
             
             <p>
-            <video id="vidElement" controls repeat crossorigin="anonymous"></video>
+            <video id="vidElement" controls repeat></video>
             <input id="fileSelector" type="file" accept="video/*"/>
             <div id="message"></div>
             </p>
@@ -29,6 +26,8 @@
             <section>
             CONTROLS:<br><br>
 
+            <!--<img src="http://www.digitiseddiseases.org/general_images/controls2.png">-->
+
             Orbit <br> left mouse / touch: one-finger move <br><br>
             Zoom <br> middle mouse, or mousewheel / touch: two-finger spread or squish<br><br>
             Pan <br> right mouse, or left mouse + ctrl/meta/shiftKey / touch: two-finger move
@@ -36,11 +35,11 @@
         </div>
       </div>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/controls/OrbitControls.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://threejs.org/build/three.min.js"></script>
+    <!-- <script src="dat.gui.min.js"></script> -->
+    <!-- include OrbitControls so that we can pan around the scene with the mouse -->
+    <script type="text/javascript" src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
     <script src="modelViewer.js"></script>
-
 </body>
 </html>

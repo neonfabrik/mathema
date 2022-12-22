@@ -13,9 +13,6 @@ let vidSrc = params.v;
 vidElement = document.getElementById("vidElement");
 vidElement.src = vidSrc;
 vidElement.controls = true;
-vidElement.crossOrigin = 'use-credentials';
-
-vidElement.addEventListener('canplaythrough', createVideoTexture(vidElement));
 
 //Scene setup
 scene = new THREE.Scene();
@@ -40,21 +37,15 @@ const light = new THREE.AmbientLight( 0x404040 ); // soft white light
 scene.add( light );
 
 
-createVideoTexture(vidElement);
 //Create Video Texture from DOM Element.
-function createVideoTexture(domElement)
-{
-    videoTexture = new THREE.VideoTexture(domElement);
-    videoTexture.crossOrigin = '';
-    videoTexture.minFilter = THREE.LinearFilter;
-    videoTexture.magFilter = THREE.LinearFilter;
-    videoTexture.format = THREE.RGBAFormat;
-    videoTexture.flipY = false;
-}
+videoTexture = new THREE.VideoTexture(vidElement);
+videoTexture.minFilter = THREE.LinearFilter;
+videoTexture.magFilter = THREE.LinearFilter;
+videoTexture.format = THREE.RGBAFormat;
+videoTexture.flipY = false;
 
 //Load 3d-model
 const loader = new THREE.GLTFLoader();
-
 loader.load(
     'model_05.glb',
     function (gltf) {
@@ -115,7 +106,6 @@ function render() {
   
   var inputNode = document.getElementById("fileSelector");
   inputNode.addEventListener('change', playSelectedFile, false);
-
 
 render();
 
