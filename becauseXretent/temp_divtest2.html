@@ -1,0 +1,101 @@
+<html>
+    <head>
+   
+    
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        .HOWCont {
+            display: flex;
+            flex-direction: row;
+        }
+        #HOWVert {
+            background-color: goldenrod;
+            writing-mode:vertical-lr;
+            transform: rotate(180deg);
+            margin:0;
+            padding:0;
+
+            text-align: center;
+        }
+
+        .HOWRows {
+            background-color: blueviolet;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .HOWItem {
+            background-color: chocolate;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .HOWItem div {
+            flex: 1;
+        }
+
+        .HOWItem div:first-of-type {
+            min-width:5em;
+            background-color: antiquewhite;
+            flex: 0.1;
+
+            display: flex;
+            align-items: center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="HOWCont">
+        <div id="HOWVert">
+            <h1 style="padding: 0; margin: 0.4em;">
+            HOW IT WORKS
+            </h1>
+        </div>
+
+        <div class="HOWRows">
+
+            <div class="HOWItem">
+            <div><h3>BUILD.</h3></div>
+            <div>
+                <p>
+                Brands & Creators can use the BECAUSE Creator Studio to build a digital store that turns their content libraries into shoppable personalized experiences.
+                </p>
+                <p>
+                Curate digital pop-up shops for customers (can be done in minutes, there is no upfront integration or set up cost).
+                </p>
+            </div>
+            </div>
+
+            <div class="HOWItem">
+            <div><h3>SHARE.</h3></div>
+            <div>
+                <p>
+                    Distribute via ANY channel (sms, email, social media) and drive back into your own digitized environment which enables 1:1 personalized relationships with your fans & consumers.
+                    SHARE.
+                </p>
+                <p>
+                    Consumers watch/shop and discover all in one place. We are device
+                    agnostic, working both on iOS and web-enabled platforms.
+                </p>
+            </div>
+            </div>
+
+            <div class="HOWItem">
+                <div><h3>LEARN.</h3></div>
+                <div>
+                    <p>
+                        Purchases are fed seamlessly and all data flows back to the brands. Utilize BECAUSE Insight Engine to interpret the data into meaningful insghts such as ideal content that converts, where to invest inventory dollars, underperforming SKUs, etc. Save time & money!
+                    </p>
+            </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

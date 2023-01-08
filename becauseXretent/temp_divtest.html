@@ -1,0 +1,132 @@
+<html>
+    <head>
+   
+    
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        .cellContainer {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: red;
+        }
+
+        .cellContainer div
+        {
+            min-width: 150px;
+            display: flex;
+            flex-direction: column;
+            flex: 0 25%;
+            background-color: green;
+        }
+
+        @media only screen and (max-width: 800px) {
+            .cellContainer div {
+                flex: 0 50%;
+            }
+        }
+
+        .cellContainer div div
+        {
+            position: relative;
+            background-color: aquamarine;
+            flex-direction: column;
+            flex: 0;
+        }
+
+        .cellContainer div div:last-of-type
+        {
+            flex: 1;
+        }
+
+        .cellContainer div div:first-of-type img
+        {
+            position: absolute;
+            height:90%;
+            left:0;
+            right:0;
+            bottom:-1em;
+            margin: auto auto;
+            z-index: 1;
+        }
+
+        .cellContainer div div:first-of-type img:first-of-type
+        {
+            position: relative;
+            object-fit: cover;
+            bottom:auto;
+            max-width: 100%;
+            width:100%;
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+    <div class="cellContainer">
+
+        <div>
+            <div>
+                <img src="because_imgs/because_platform_bg_1.png">
+                <img src="because_imgs/because_platform_icon_1.png">
+            </div>
+            <div style="background-color: rgb(65,64,64);">
+                <h4>THE SHOPPABLE VIDEO</h4>
+                <p>
+                Device agnostic, transportable and interactive video shopping experiences. These experiences are where content connects with products.
+                </p>
+                <br>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <img src="because_imgs/because_platform_bg_2.png">
+                <img src="because_imgs/because_platform_icon_2.png">
+            </div>
+            <div style="background-color: rgb(65,64,64);">
+                <h4>THE STOREFRONTS</h4>
+                <p>
+                    A three-way marketplace allowing controlled access to exclusive, customizable preferenced based content.
+                </p>
+                <br>
+            </div>
+
+        </div>
+
+        <div>
+            <div>
+                <img src="because_imgs/because_platform_bg_3.png">
+                <img src="because_imgs/because_platform_icon_3.png">
+            </div>
+            <div style="background-color: rgb(65,64,64);">
+                <h4>THE CREATOR STUDIO</h4>
+                <p>
+                    A tool for creators to author videos, layer products from live commerce engines, share and track shoppable experiences in minutes.
+                </p>
+                <br>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <img src="because_imgs/because_platform_bg_4.png">
+                <img src="because_imgs/because_platform_icon_4.png">
+            </div>
+            <div style="background-color: rgb(65,64,64);">
+                <h4>THE CONTROL CENTER</h4>
+                <p>
+                    The powerful behind the scenes one stop shop for to get live data feeds with actionable insights, and full control over data, access, and administration.
+                </p>
+                <br>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
