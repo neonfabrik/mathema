@@ -467,7 +467,8 @@ a
     }
 
     .leftbox, .rightbox {
-       min-width:90%;
+       max-width:90%;
+       font-size: 0.7em;
     }
 
     .HOWCont {
