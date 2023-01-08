@@ -91,6 +91,8 @@ small {
     padding: 2em
 }
 
+
+
 .alignholder
 {
     position: relative;
@@ -129,7 +131,7 @@ small {
     align-items: center;
 
     position: absolute;
-    width:500px;
+    width:450px;
     
     left:0;
     top: 0;
@@ -362,12 +364,6 @@ a
 
 }
 
-@media only screen and (max-width: 800px) {
-    .cellContainer div {
-        flex: 0 50%;
-    }
-}
-
 .cellContainer div div
 {
     position: relative;
@@ -418,8 +414,10 @@ a
     left:0;
     top:10%;
     height:80%;
+    max-height: 500px;
+    top: calc((100% - min(400px, 80%))/2);
     z-index: 0;
-    opacity: 70%;
+    opacity: 100%;
 }
 
 #HOWVert {
@@ -429,7 +427,7 @@ a
     margin:0;
     padding:0;
     color:black;
-    background-color: rgba(255, 255, 255, 0.65);
+    background-color: rgba(255, 255, 255, 0.9);
     text-align: center;
 }
 
@@ -458,4 +456,28 @@ a
 
     display: flex;
     align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .inset { padding: 1em; }
+    
+    .cellContainer div {
+        flex: 0 50%;
+    }
+
+    .leftbox, .rightbox {
+       min-width:90%;
+    }
+
+    .HOWCont {
+        width:90%;
+        margin-left: 10%;
+    }
+
+    .HOWItem {
+        flex-direction: column;
+    }
+
+
 }
